@@ -1,13 +1,20 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import count from '@/components/count.vue'
-import Hello from '@/components/Hello.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import TheWelcome from './components/TheWelcome.vue'
+// import count from '@/components/count.vue'
+// import Hello from '@/components/Hello.vue'
+
+import Header from '@/components/Header.vue'
+import Body from '@/components/Body.vue'
+import Footer from '@/components/Footer.vue'
 
 export default{
   components:{
-    Hello,
-    count
+    // Hello,
+    // count,
+    Header,
+    Body,
+    Footer,
   }
 }
 </script>
@@ -16,34 +23,24 @@ export default{
   <!-- <h1>Hello from Soumita</h1>
   <count/> -->
 
-  <Hello/>
+  <!-- <Hello/> -->
+
+  <Header/>
+  <Body/>
+  <Footer/>
 </template>
 
 <style>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  ::-webkit-scrollbar{
+    background-color: black;
+    width: 1px;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  ::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 0, 0);
   }
-}
 </style>
