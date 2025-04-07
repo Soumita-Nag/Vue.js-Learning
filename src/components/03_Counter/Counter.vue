@@ -1,12 +1,20 @@
 <template>
-    <h1>Counter</h1>
+    <h1 v-bind="objAtts">Counter</h1>
+    <!-- binds the whole object of attributes inside a tag -->
     <div class="container">
-        <button @click="Decrement" id="dec">DECREASE</button>
-        <h1>{{ count }}</h1> 
+        <button @click="Decrement" id="dec" :disabled="dec">DECREASE</button>
+        <!-- v-bind:class or :class helps to bind class or any other attribute with a dynamic value. use : before the attribute -->
+         <!-- if we assign null for the value, then the class will be dynamically removed -->
+        <h1 :class="color">{{ count }}</h1> 
         <!-- count state can be accessible inside template using {{  }} which is called mustaches -->
-        <button @click="Increment" id="inc">INCREASE</button>
+        <button @click="Increment" id="inc" :disabled="inc">INCREASE</button>
+        <!-- we can use v-on in place of @ in @click == v-on:click -->
         
     </div>
+    <h2 :class="color">{{ (count>=0)?(count>5)?"Success":"Normal":"Danger" }}</h2> 
+    <h2 :class="color">{{ count%2==0 ? "Even" : "Odd" }}</h2> 
+    <h2 :class="color">{{ prime() }}</h2> 
+    <!-- +,-, ternary operators can be used inside {{  }} -->
 </template>
 
 <script>
@@ -14,14 +22,53 @@ export default{
     data(){
         return{
             count : 0, //Called state, like a key-value paire, count stores 0
+            color : 'normal',
+            inc : false,
+            dec : false,
+            objAtts:{
+                id: 'underline',
+                class : 'pink',
+            }
         }
     },
     methods:{
         Increment(){
             this.count++;
+
+            if(this.count>5){
+                this.color='success';
+            }
+            else if(this.count>=0)
+            this.color='normal';
+
+            if(this.count>10)
+            this.inc=true;
+            else if(this.count>=-5)
+            this.dec=false;
         },
         Decrement(){
             this.count--;
+
+            if(this.count<0)
+            this.color='danger';
+            else if(this.count<=5)
+            this.color='normal';
+
+            if(this.count<-5)
+            this.dec=true;
+            else if(this.count<=10)
+            this.inc=false;
+        },
+        prime(){
+            if(this.count==2)
+            return "Prime";
+            if(this.count==0  || this.count==1)
+            return "Non Prime"
+            for(let i=2;i<this.count;i++){
+                if(this.count % i==0)
+                return "Non Prime";
+            }
+            return "Prime";
         }
     }
 }
@@ -52,11 +99,27 @@ export default{
         border-radius: 20px;
         font-size: 18px;
         font-weight: bold;
+        cursor: pointer;
     }
     #inc{
         background-color: rgb(47, 255, 141);
     }
     #dec{
         background-color: red;
+    }
+    .normal{
+        color: blue;
+    }
+    .danger{
+        color: red;
+    }
+    .success{
+        color: green;
+    }
+    #underline{
+        text-decoration: underline;
+    }
+    .pink{
+        color: rgb(255, 0, 123);
     }
 </style>

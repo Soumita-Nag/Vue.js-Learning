@@ -6,9 +6,9 @@
 // import Body from '@/components/01_demo_page/Body.vue'
 // import Footer from '@/components/01_demo_page/Footer.vue'
 
-// import Counter from '@/components/03_Counter/Counter.vue'
+import Counter from '@/components/03_Counter/Counter.vue'
 
-import Directives from '@/components/02_Examples/directives.vue'
+// import Directives from '@/components/02_Examples/directives.vue'
 
 export default{
   components:{
@@ -17,8 +17,8 @@ export default{
     // Header,
     // Body,
     // Footer,
-    // Counter,
-    Directives,
+    Counter,
+    // Directives,
   }
 }
 </script>
@@ -36,9 +36,9 @@ export default{
   <!-- <Hello/> -->
 <!-- Components for 02_Examples ends -->
 
-<!-- <Counter/> -->
+<Counter/>
 
- <Directives/>
+ <!-- <Directives/> -->
 </template>
 
 <style>
