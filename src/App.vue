@@ -1,15 +1,25 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import count from '@/components/count.vue'
+import Hello from '@/components/Hello.vue'
+
+export default{
+  components:{
+    Hello,
+    count
+  }
+}
 </script>
 
 <template>
-  <h1>Hello from Soumita</h1>
-  <count/>
+  <!-- <h1>Hello from Soumita</h1>
+  <count/> -->
+
+  <Hello/>
 </template>
 
-<style scoped>
+<style>
 header {
   line-height: 1.5;
 }
