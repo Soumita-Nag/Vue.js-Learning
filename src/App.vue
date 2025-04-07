@@ -2,26 +2,29 @@
 // import count from '@/components/02_Examples/count.vue'
 // import Hello from '@/components/02_Examples/Hello.vue'
 
-import Header from '@/components/01_demo_page/Header.vue'
-import Body from '@/components/01_demo_page/Body.vue'
-import Footer from '@/components/01_demo_page/Footer.vue'
+// import Header from '@/components/01_demo_page/Header.vue'
+// import Body from '@/components/01_demo_page/Body.vue'
+// import Footer from '@/components/01_demo_page/Footer.vue'
+
+import Counter from '@/components/03_Counter/Counter.vue'
 
 export default{
   components:{
     // Hello,
     // count,
-    Header,
-    Body,
-    Footer,
+    // Header,
+    // Body,
+    // Footer,
+    Counter,
   }
 }
 </script>
 
 <template>
   <!-- Components for 01_demo_page starts -->
-  <Header/>
+  <!-- <Header/>
   <Body/>
-  <Footer/>
+  <Footer/> -->
   <!-- Components for 01_demo_page ends -->
 
 <!-- Components for 02_Examples starts -->
@@ -30,6 +33,7 @@ export default{
   <!-- <Hello/> -->
 <!-- Components for 02_Examples ends -->
 
+<Counter/>
 </template>
 
 <style>
