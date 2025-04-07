@@ -1,10 +1,12 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import count from '@/components/count.vue'
 </script>
 
 <template>
   <h1>Hello from Soumita</h1>
+  <count/>
 </template>
 
 <style scoped>
