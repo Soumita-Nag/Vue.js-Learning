@@ -23,6 +23,11 @@ export default{
     // Counter,
     // Directives,
     toggleText,
+  },
+  data(){
+    return{
+      isActive:true,
+    }
   }
 }
 </script>
@@ -44,7 +49,7 @@ export default{
 
  <!-- <Directives/> -->
 
-  <toggleText/>
+  <toggleText :class="{'test':isActive}"/>
 </template>
 
 <style>
@@ -59,5 +64,8 @@ export default{
 }
 ::-webkit-scrollbar-thumb{
   background-color: rgb(0, 0, 0);
+}
+.test{
+  background-color: red;
 }
 </style>
