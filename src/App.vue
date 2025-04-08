@@ -1,23 +1,24 @@
 <script>
-// import count from '@/components/02_Examples/count.vue'
+import count from '@/components/02_Examples/count.vue'
+
 // import Hello from '@/components/02_Examples/Hello.vue'
 
 // import Header from '@/components/01_demo_page/Header.vue'
 // import Body from '@/components/01_demo_page/Body.vue'
 // import Footer from '@/components/01_demo_page/Footer.vue'
 
-import Counter from '@/components/03_Counter/Counter.vue'
+// import Counter from '@/components/03_Counter/Counter.vue'
 
 // import Directives from '@/components/02_Examples/directives.vue'
 
 export default{
   components:{
     // Hello,
-    // count,
+    count,
     // Header,
     // Body,
     // Footer,
-    Counter,
+    // Counter,
     // Directives,
   }
 }
@@ -32,8 +33,8 @@ export default{
 
 <!-- Components for 02_Examples starts -->
   <!-- <h1>Hello from Soumita</h1>
-  <count/> -->
-  <!-- <Hello/> -->
+  <Hello/> -->
+  <count/>
 <!-- Components for 02_Examples ends -->
 
 <Counter/>
