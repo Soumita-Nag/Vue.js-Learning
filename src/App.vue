@@ -11,15 +11,18 @@ import count from '@/components/02_Examples/count.vue'
 
 // import Directives from '@/components/02_Examples/directives.vue'
 
+import toggleText from '@/components/02_Examples/toggleText.vue' 
+
 export default{
   components:{
     // Hello,
-    count,
+    // count,
     // Header,
     // Body,
     // Footer,
     // Counter,
     // Directives,
+    toggleText,
   }
 }
 </script>
@@ -34,12 +37,14 @@ export default{
 <!-- Components for 02_Examples starts -->
   <!-- <h1>Hello from Soumita</h1>
   <Hello/> -->
-  <count/>
+  <!-- <count/> -->
 <!-- Components for 02_Examples ends -->
 
-<Counter/>
+<!-- <Counter/> -->
 
  <!-- <Directives/> -->
+
+  <toggleText/>
 </template>
 
 <style>
