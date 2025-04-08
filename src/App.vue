@@ -11,7 +11,9 @@ import count from '@/components/02_Examples/count.vue'
 
 // import Directives from '@/components/02_Examples/directives.vue'
 
-import toggleText from '@/components/02_Examples/toggleText.vue' 
+// import toggleText from '@/components/02_Examples/toggleText.vue' 
+
+import computedMedhod from './components/04_computed_methods/computedMedhod.vue';
 
 export default{
   components:{
@@ -22,13 +24,14 @@ export default{
     // Footer,
     // Counter,
     // Directives,
-    toggleText,
+    // toggleText,
+    computedMedhod,
   },
-  data(){
-    return{
-      isActive:true,
-    }
-  }
+  // data(){
+  //   return{
+  //     isActive:true,
+  //   }
+  // }
 }
 </script>
 
@@ -49,7 +52,9 @@ export default{
 
  <!-- <Directives/> -->
 
-  <toggleText :class="{'test':isActive}"/>
+  <!-- <toggleText :class="{'test':isActive}"/> -->
+
+   <computedMedhod/>
 </template>
 
 <style>
@@ -65,7 +70,7 @@ export default{
 ::-webkit-scrollbar-thumb{
   background-color: rgb(0, 0, 0);
 }
-.test{
+/* .test{
   background-color: red;
-}
+} */
 </style>
