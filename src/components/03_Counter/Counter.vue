@@ -1,6 +1,13 @@
 <template>
-    <h1 v-bind="objAtts">Counter</h1>
     <!-- binds the whole object of attributes inside a tag -->
+    <h1 v-bind="objAtts">Counter</h1>
+
+    <!-- class and style binding , normal class can also be used with v-bind. if isActive is true success class will apply otherwise not.-->
+    <!-- <h2 class="normal" :class="{'success':isActive, 'danger':hasError}">The counter is given bellow</h2> -->
+
+     <!-- this line can also be written as:  -->
+    <h2 :class="objClass">The counter is given bellow</h2>
+
     <div class="container">
         <button @click="Decrement" id="dec" :disabled="dec">DECREASE</button>
         <!-- v-bind:class or :class helps to bind class or any other attribute with a dynamic value. use : before the attribute -->
@@ -28,7 +35,14 @@ export default{
             objAtts:{
                 id: 'underline',
                 class : 'pink',
-            }
+            },
+            // isActive:false,
+            // hasError: false,
+            objClass:{
+                normal:true,
+                success:false,
+                danger:false,
+            },
         }
     },
     methods:{
@@ -38,19 +52,30 @@ export default{
             if(this.count>5){
                 this.color='success';
             }
-            else if(this.count>=0)
-            this.color='normal';
-
+            else if(this.count>=0){
+                this.color='normal';
+                // this.isActive=true;
+                this.objClass["success"]=true;
+                // this.hasError=false;
+                this.objClass["danger"]=false;
+                
+            }
+            
             if(this.count>10)
             this.inc=true;
-            else if(this.count>=-5)
-            this.dec=false;
-        },
+        else if(this.count>=-5)
+        this.dec=false;
+},
         Decrement(){
             this.count--;
-
-            if(this.count<0)
-            this.color='danger';
+            
+            if(this.count<0){
+                this.color='danger';
+                // this.isActive=false;
+                this.objClass["success"]=false;
+                // this.hasError=true;
+                this.objClass["danger"]=true;
+            }
             else if(this.count<=5)
             this.color='normal';
 
