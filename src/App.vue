@@ -1,5 +1,5 @@
 <script>
-import count from '@/components/02_Examples/count.vue'
+// import count from '@/components/02_Examples/count.vue'
 
 // import Hello from '@/components/02_Examples/Hello.vue'
 
@@ -13,7 +13,9 @@ import count from '@/components/02_Examples/count.vue'
 
 // import toggleText from '@/components/02_Examples/toggleText.vue' 
 
-import computedMedhod from './components/04_computed_methods/computedMedhod.vue';
+// import computedMedhod from './components/04_computed_methods/computedMedhod.vue';
+
+import vif from './components/05_conditional_rendering/vif.vue'
 
 export default{
   components:{
@@ -25,13 +27,14 @@ export default{
     // Counter,
     // Directives,
     // toggleText,
-    computedMedhod,
+    // computedMedhod,
+    vif,
   },
   // data(){
   //   return{
   //     isActive:true,
   //   }
-  // }
+  // },
 }
 </script>
 
@@ -53,8 +56,8 @@ export default{
  <!-- <Directives/> -->
 
   <!-- <toggleText :class="{'test':isActive}"/> -->
-
-   <computedMedhod/>
+  <!-- <computedMedhod/> -->
+  <vif/>
 </template>
 
 <style>
