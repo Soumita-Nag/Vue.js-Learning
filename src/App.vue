@@ -15,7 +15,9 @@
 
 // import computedMedhod from './components/04_computed_methods/computedMedhod.vue';
 
-import vif from './components/05_conditional_rendering/vif.vue'
+// import vif from './components/05_conditional_rendering/vif.vue'
+
+import formPage from './components/05_conditional_rendering/form.vue'
 
 export default{
   components:{
@@ -28,7 +30,8 @@ export default{
     // Directives,
     // toggleText,
     // computedMedhod,
-    vif,
+    // vif,
+    formPage,
   },
   // data(){
   //   return{
@@ -57,7 +60,8 @@ export default{
 
   <!-- <toggleText :class="{'test':isActive}"/> -->
   <!-- <computedMedhod/> -->
-  <vif/>
+  <!-- <vif/> -->
+   <formPage/>
 </template>
 
 <style>
