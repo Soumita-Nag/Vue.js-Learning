@@ -17,7 +17,9 @@
 
 // import vif from './components/05_conditional_rendering/vif.vue'
 
-import formPage from './components/05_conditional_rendering/form.vue'
+// import formPage from './components/05_conditional_rendering/form.vue'
+
+import mlformPage from './components/05_conditional_rendering/multilevelForm.vue'
 
 export default{
   components:{
@@ -31,7 +33,8 @@ export default{
     // toggleText,
     // computedMedhod,
     // vif,
-    formPage,
+    // formPage,
+    mlformPage,
   },
   // data(){
   //   return{
@@ -61,7 +64,8 @@ export default{
   <!-- <toggleText :class="{'test':isActive}"/> -->
   <!-- <computedMedhod/> -->
   <!-- <vif/> -->
-   <formPage/>
+   <!-- <formPage/> -->
+   <mlformPage/>
 </template>
 
 <style>
