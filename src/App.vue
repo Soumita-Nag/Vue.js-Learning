@@ -19,7 +19,9 @@
 
 // import formPage from './components/05_conditional_rendering/form.vue'
 
-import mlformPage from './components/05_conditional_rendering/multilevelForm.vue'
+// import mlformPage from './components/05_conditional_rendering/multilevelForm.vue'
+
+import API from './components/05_conditional_rendering/APIdata.vue'
 
 export default{
   components:{
@@ -34,7 +36,8 @@ export default{
     // computedMedhod,
     // vif,
     // formPage,
-    mlformPage,
+    // mlformPage,
+    API,
   },
   // data(){
   //   return{
@@ -65,7 +68,8 @@ export default{
   <!-- <computedMedhod/> -->
   <!-- <vif/> -->
    <!-- <formPage/> -->
-   <mlformPage/>
+   <!-- <mlformPage/> -->
+  <API/>
 </template>
 
 <style>
