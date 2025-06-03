@@ -16,13 +16,11 @@
 // import computedMedhod from './components/04_computed_methods/computedMedhod.vue';
 
 // import vif from './components/05_conditional_rendering/vif.vue'
-
 // import formPage from './components/05_conditional_rendering/form.vue'
-
 // import mlformPage from './components/05_conditional_rendering/multilevelForm.vue'
+// import API from './components/05_conditional_rendering/APIdata.vue'
 
-import API from './components/05_conditional_rendering/APIdata.vue'
-
+import intro from './components/06_List_Rendering/intro.vue';
 export default{
   components:{
     // Hello,
@@ -37,7 +35,8 @@ export default{
     // vif,
     // formPage,
     // mlformPage,
-    API,
+    // API,
+    intro,
   },
   // data(){
   //   return{
@@ -69,7 +68,9 @@ export default{
   <!-- <vif/> -->
    <!-- <formPage/> -->
    <!-- <mlformPage/> -->
-  <API/>
+  <!-- <API/> -->
+
+<intro/>
 </template>
 
 <style>
