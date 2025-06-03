@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="card" v-for="(book,index) in books">
+        <div class="card" v-for="(book,index) in books" :key="index">
             <h2>{{book.name}}</h2>
             <h4>Book No: {{index+1}}</h4>
             <h3>Author: {{book.author}}</h3>
@@ -35,10 +35,20 @@
                 <span v-if="todo.isComplete">{{ todo.name }}</span>
             </div>
         </div>
+        <div class="box3">
+            <!-- printing a component multiple time using vfor -->
+            <span v-for="n in 3">
+                <hello/>
+            </span>
+        </div>
     </div>
 </template>
 <script>
+import hello from './hello.vue';
     export default{
+        components:{
+            hello,
+        },
         data(){
             return{
                 books:[
