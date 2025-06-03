@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <!-- without component rendering -->
         <div class="card" v-for="(book,index) in books" :key="index">
             <h2>{{book.name}}</h2>
             <h4>Book No: {{index+1}}</h4>
@@ -16,6 +17,16 @@
             </span>
             <button>Buy</button>
         </div>
+
+        <!-- with component rendering -->
+        <div v-for="mybook in books">
+            <div class="card" >
+                <showBook :book="mybook"/>
+                <!-- sending the object to the child component -->
+            </div>
+        </div>
+    </div>
+    <div class="box">
         <div class="box1">
             <ul>
                 <li v-for="(value,key,index) in myObject"><b>{{ index+1 }}. {{ key }}:</b> {{ value }}</li>
@@ -41,13 +52,15 @@
                 <hello/>
             </span>
         </div>
-    </div>
+    </div> 
 </template>
 <script>
 import hello from './hello.vue';
+import showBook from './showBook.vue';
     export default{
         components:{
             hello,
+            showBook,
         },
         data(){
             return{
@@ -131,6 +144,16 @@ import hello from './hello.vue';
         display: flex;
     }
     .container{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 100px 0;
+        gap: 50px;
+        
+    }
+    .box{
         height: 100vh;
         width: 100vw;
         display: flex;
