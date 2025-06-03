@@ -1,14 +1,40 @@
 <template>
     <div class="container">
         <div class="card" v-for="(book,index) in books">
-        <h2>{{book.name}}</h2>
-        <h4>Book No: {{index+1}}</h4>
-        <h3>Author: {{book.author}}</h3>
-        <h4>Price: {{book.price}}</h4>
-        <h5>publisher: {{publisher}}</h5>
-        <span id="tag" v-for="(tag,ind) in book.tags">{{ tag }}{{ ind<tag.length-1?" ,":"" }}</span>
-        <button>Buy</button>
-    </div>
+            <h2>{{book.name}}</h2>
+            <h4>Book No: {{index+1}}</h4>
+            <h3>Author: {{book.author}}</h3>
+            <h4>Price: {{book.price}}</h4>
+            <h5>publisher: {{publisher}}</h5>
+            <span id="tag" v-if="book.tags.length!==0">
+                <!-- this section will be visible if and only if tags are given in the books -->
+                <b>Tags:&nbsp;</b>
+                <p v-for="(tag,ind) in book.tags">
+                    {{ tag }}{{ ind<book.tags.length-1?",&nbsp;":"" }}
+                    <!-- printing each tag with a , except for the last tag where , is not needed -->
+                </p>
+            </span>
+            <button>Buy</button>
+        </div>
+        <div class="box1">
+            <ul>
+                <li v-for="(value,key,index) in myObject"><b>{{ index+1 }}. {{ key }}:</b> {{ value }}</li>
+                <!-- iterating object using v-for, value and key both are accessible, also index can also be accessible-->
+                 <!-- syntax: (value,key,index) -->
+            </ul>
+            <span v-for="n in 10">{{ n }}&nbsp;</span><br>
+            <span v-for="n in books.length">{{ n }}&nbsp;</span>
+            <!-- it will start counting from 1 instead of zero -->
+        </div>
+        <div class="box2">
+            <!-- <div v-for="todo in todos" v-if="todo.isComplete"> -->
+                <!-- Wrong appreach: if we use vif and vfor in same element, it may show error -->
+                <!-- precedence of vif is higher than vfor, here we're tring to access todo before definging it -->
+                <!-- we have to do it in two steps -->
+            <div v-for="todo in todos">
+                <span v-if="todo.isComplete">{{ todo.name }}</span>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -26,7 +52,8 @@
                         name:"HP and the Cursed Child",
                         price: 480,
                         author:"J.K.Rowling",
-                        tags:['scifi','thriller'],
+                        // tags:['scifi','thriller'],
+                        tags:[],
                     },
                     {
                         name:"Sonar Kella",
@@ -41,7 +68,34 @@
                         tags:['romantic'],
                     },
                 ],
-                publisher: "bloomsberry"
+                publisher: "bloomsberry",
+                myObject: {
+                    title: 'How to do lists in Vue',
+                    author: 'Jane Doe',
+                    publishedAt: '2016-04-10'
+                },
+                todos:[
+                    {
+                        name:"dbms",
+                        isComplete:false
+                    },
+                    {
+                        name:"os",
+                        isComplete:true
+                    },
+                    {
+                        name:"java",
+                        isComplete:true
+                    },
+                    {
+                        name:"coa",
+                        isComplete:false
+                    },
+                    {
+                        name:"dsa",
+                        isComplete:false
+                    },
+                ]      
             }
         },
         methodes:{
@@ -64,7 +118,7 @@
         gap: 10px;
     }
     #tag{
-        display: inline;
+        display: flex;
     }
     .container{
         height: 100vh;
